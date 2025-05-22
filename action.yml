@@ -1,0 +1,26 @@
+name: 'Quant Cloud Create Application'
+description: 'Create a new application in Quant Cloud'
+inputs:
+  api_key:
+    description: 'Quant API key'
+    required: true
+  organization:
+    type: string
+    description: 'Organization ID to create the application in'
+    required: true
+  app_name:
+    type: string
+    description: 'Name of the application to create'
+    required: true
+  compose_file:
+    type: string
+    description: 'Path to docker-compose.yml file in the repository'
+    required: true
+  base_url:
+    type: string
+    description: 'Base URL of the Quant Cloud API'
+    required: false
+    default: 'https://dashboard.quantcdn.io/api/v3'
+runs:
+  using: 'node20'
+  main: 'dist/index.js' 
