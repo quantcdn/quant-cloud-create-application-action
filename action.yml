@@ -12,9 +12,9 @@ inputs:
     type: string
     description: 'Name of the application to create'
     required: true
-  compose_file:
+  compose_spec:
     type: string
-    description: 'Path to docker-compose.yml file in the repository'
+    description: 'JSON string of the validated compose specification from quant-cloud-compose-action'
     required: true
   base_url:
     type: string
