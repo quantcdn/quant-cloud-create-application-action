@@ -5,22 +5,19 @@ inputs:
     description: 'Quant API key'
     required: true
   organization:
-    type: string
     description: 'Organization ID to create the application in'
     required: true
   app_name:
-    type: string
     description: 'Name of the application to create'
     required: true
   compose_spec:
-    type: string
     description: 'JSON string of the validated compose specification from quant-cloud-compose-action'
     required: true
   base_url:
-    type: string
     description: 'Base URL of the Quant Cloud API'
     required: false
     default: 'https://dashboard.quantcdn.io/api/v3'
 runs:
-  using: 'node20'
+  using: 'node24'
+  pre: 'runtime-check.cjs'
   main: 'dist/index.js' 
